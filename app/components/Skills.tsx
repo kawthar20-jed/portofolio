@@ -1,16 +1,15 @@
-const skills = ["Angular", "Laravel", "Next.js", "Java", "MySQL", "Git"];
+import '../styles/Skills.css';
+
+const skills = ["Spring Boot", "PostgreSQL", "MongoDB", "Next.js", "Laravel", "Git", "Docker"];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <section id="skills" className="skills">
+      <div className="skills-container">
+        <h2 className="skills-title">Skills</h2>
+        <div className="skills-grid">
           {skills.map((skill) => (
-            <div
-              key={skill}
-              className="bg-slate-800 p-6 rounded text-center"
-            >
+            <div key={skill} className="skill-card">
               {skill}
             </div>
           ))}

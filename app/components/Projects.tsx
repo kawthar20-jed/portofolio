@@ -1,16 +1,47 @@
+'use client';
+import '../styles/Projects.css';
+
+const projectsData = [
+  {
+    title: "Doctor Appointment",
+    description: "Site web permettant aux patients de prendre rendez-vous avec un médecin facilement. Gestion des disponibilités, notifications et interface simple pour les patients et les médecins.",
+    link: "https://medcine-app-production.up.railway.app/"
+  },
+  {
+      title: "FaisTroquer",
+      description: "Application web de troc de services : vous proposez votre service et si l'autre personne est d'accord, elle propose le sien. Une façon simple et rapide d'échanger des services entre utilisateurs.",
+      link: "#" // remplacer par ton lien réel si disponible
+    },
+  {
+    title: "Gestion RH",
+    description: "Application de gestion des ressources humaines, du matériel et des congés. Elle permet de suivre les employés, gérer les équipements et planifier les congés efficacement.",
+    link: "#" // tu peux remplacer par ton lien réel si disponible
+  },
+  {
+      title: "Pâtisserie Web App",
+      description: "Application web de pâtisserie présentant les produits traditionnels (Beldi), glaces et gâteaux avec la possibilité de passer commande en ligne sans paiement intégré.",
+      link: "https://github.com/kawthar20-jed/site-web-p-tisserie"
+    },
+];
+
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((p) => (
-            <div key={p} className="bg-slate-800 p-6 rounded">
-              <h3 className="font-semibold mb-2">Project {p}</h3>
-              <p className="text-gray-400 text-sm mb-4">
-                Description courte du projet.
-              </p>
-              <button className="text-blue-400">View Project →</button>
+    <section id="projects" className="projects">
+      <div className="projects-container">
+        <h2 className="projects-title">Projects</h2>
+        <div className="projects-grid">
+          {projectsData.map((p, index) => (
+            <div key={index} className="project-card">
+              <h3 className="project-title">{p.title}</h3>
+              <p className="project-desc">{p.description}</p>
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-button"
+              >
+                View Project →
+              </a>
             </div>
           ))}
         </div>
